@@ -4,16 +4,14 @@
 
 
 
-int f(int n)
+void InputArray(int[] array)
 {
-
-    int res = 1;
-    for (int i = 2; i <= n; i++)
-    res *= i;
-    return res;
+    for (int i = 0; i < array.Length; i++)
+        array[i] = new Random().Next(0,2);
 }
 
 Console.Clear();
-Console.Write("введите число: ");
-int number = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine(f(number));
+int [] array = new int[8];
+InputArray(array);
+
+Console.WriteLine($"[{string.Join(", ", array)}]");
